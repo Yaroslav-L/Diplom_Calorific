@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Калорийность</string>
+    <string name="title_plan">План питания</string>
+    <string name="title_cam">Камера калорий</string>
+    <string name="title_profile">Пищевой профиль</string>
+    <string name="preName">Что это?</string>
+    <string name="preRez">Сколько каллорий на 100г?</string>
+</resources>

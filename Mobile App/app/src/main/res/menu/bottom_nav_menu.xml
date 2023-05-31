@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_plan"
+        android:icon="@drawable/ic_plan"
+        android:title="@string/title_plan"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/navigation_cam"
+        android:icon="@drawable/ic_cam"
+        android:title="@string/title_cam" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_prof"
+        android:title="@string/title_profile" />
+
+</menu>
