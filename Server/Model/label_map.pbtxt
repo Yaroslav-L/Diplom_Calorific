@@ -1,0 +1,59 @@
+item {
+    id: 1
+    name: 'apple'
+}
+
+item {
+    id: 2
+    name: 'banana'
+}
+
+item {
+    id: 3
+    name: 'borsch'
+}
+
+item {
+    id: 4
+    name: 'bread'
+}
+
+item {
+    id: 5
+    name: 'buckwheat'
+}
+
+item {
+    id: 6
+    name: 'chicken'
+}
+
+item {
+    id: 7
+    name: 'cutlet'
+}
+
+item {
+    id: 8
+    name: 'mash'
+}
+
+item {
+    id: 9
+    name: 'okroshka'
+}
+
+item {
+    id: 10
+    name: 'orange'
+}
+
+item {
+    id: 11
+    name: 'pasta'
+}
+
+item {
+    id: 12
+    name: 'rice'
+}

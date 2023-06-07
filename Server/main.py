@@ -1,6 +1,7 @@
 import flask
 from flask import Flask,request,render_template, redirect, send_file
 from KCAL import main
+from ObjectDetect import main_object_detect
 import os
 from PIL import Image
 import base64 
@@ -15,7 +16,13 @@ def upload_image():
             print("Обманка раскрыта")
             return redirect(request.url)
         img = Image.open(image)
-        x = main(img)
+
+
+        type = request.form['type']
+        
+        if type == "1": x = main(img)
+        else : x = main_object_detect(img)
+
         return render_template("index.html",name=x['name'],rez=x['KcaL'])
     return render_template("index.html")
 

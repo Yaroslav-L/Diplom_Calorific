@@ -31,8 +31,12 @@
             </div>
             <form class="container" enctype = "multipart/form-data" action = "/home" method = "post">
                 <p>Выберите файл из памяти устройства или сделайте снимок.</p>
-                <input name="file" type="file" name = "file">
-                <input name="submit" type="submit">
+                <input type="radio" id="Classif" name="type" value="1" checked>
+                <label for="huey">Классификация</label>
+                <input type="radio" id="Detect" name="type" value="2" checked>
+                <label for="huey">Обнаружение</label><br>
+                <input name="file" type="file" name = "file"><br>
+                <input name="submit" type="submit"><br>
             </form>
             <br>
             <div class="container">
