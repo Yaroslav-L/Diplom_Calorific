@@ -38,12 +38,12 @@ def predict_class(model, img, show = True):
 
   pred = model.predict(img)
   index = np.argmax(pred)
-  with open("Model\\FoodKcal.json",'r',encoding='utf-8') as f:
+  with open("Diplom_Calorific\Server\model\FoodKcal.json",'r',encoding='utf-8') as f:
         d = json.loads(f.read())
         x = d[str(index)]
   return(x)
 
 def main(img):
-    model_best = load_model('Model\\trainedmodel_101class.hdf5',compile = False)
+    model_best = load_model('Diplom_Calorific\Server\model\\trainedmodel_101class.hdf5',compile = False)
     x= predict_class(model_best, img, True)
     return(x)

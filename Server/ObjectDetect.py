@@ -22,14 +22,14 @@ matplotlib.use('TkAgg')
 def object_detect(img):
 
     IMAGE_SIZE = (12, 8) 
-    PATH_TO_SAVED_MODEL="Model\\saved_model"
+    PATH_TO_SAVED_MODEL="Diplom_Calorific\Server\model\saved_model"
 
     img = img.convert('RGB')
 
     print('Loading model...', end='')
     detect_fn=tf.saved_model.load(PATH_TO_SAVED_MODEL)
     print('Done!')
-    category_index=label_map_util.create_category_index_from_labelmap("Model\\label_map.pbtxt",use_display_name=True)
+    category_index=label_map_util.create_category_index_from_labelmap("Diplom_Calorific\Server\model\label_map.pbtxt",use_display_name=True)
 
     image_np = np.array(img)
     input_tensor = tf.convert_to_tensor(image_np)
@@ -72,7 +72,7 @@ def output_data(detections):
     min_score_thresh=.7
     for i in range(min(max_boxes_to_draw, boxes.shape[0])):
         if scores is None or scores[i] > min_score_thresh:
-            with open("Model\\fkcal_data_objdtc.json",'r',encoding='utf-8') as f:
+            with open("Diplom_Calorific\Server\model\\fkcal_data_objdtc.json",'r',encoding='utf-8') as f:
                 d = json.loads(f.read())
                 x = d[str(det[i])]
                 all_name = all_name+x["name"]+", "

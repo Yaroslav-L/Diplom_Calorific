@@ -17,7 +17,6 @@ def upload_image():
             return redirect(request.url)
         img = Image.open(image)
 
-
         type = request.form['type']
         
         if type == "1": x = main(img)
@@ -26,9 +25,16 @@ def upload_image():
         return render_template("index.html",name=x['name'],rez=x['KcaL'])
     return render_template("index.html")
 
-@app.route("/api",methods=['POST','GET'])
-def api():
+@app.route("/classif",methods=['POST','GET'])
+def classif():
     x = main(Image.open(request.files['image']))
+    print(x)
+    return x
+
+
+@app.route("/detect",methods=['POST','GET'])
+def detect():
+    x = main_object_detect(Image.open(request.files['image']))
     print(x)
     return x
 

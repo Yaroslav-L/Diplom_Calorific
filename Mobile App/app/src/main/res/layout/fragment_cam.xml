@@ -38,7 +38,7 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="48sp"
+            android:textSize="34sp"
             android:textStyle="bold" />
 
         <TextView
@@ -50,7 +50,7 @@
             android:text="@string/preRez"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="34sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -58,46 +58,81 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:baselineAligned="false"
         android:gravity="center"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <ImageButton
-            android:id="@+id/imgbtn_gallery"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:backgroundTint="#00000000"
-            android:onClick="btngalclc"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_galery_button" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/imgbtn_analysis"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_weight="2"
-            android:backgroundTint="#00000000"
-            android:onClick="btnanalclc"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_analysis_button" />
+            <ImageButton
+                android:id="@+id/imgbtn_gallery"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00000000"
+                android:onClick="btngalclc"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_galery_button" />
 
-        <ImageButton
-            android:id="@+id/imgbtn_cam"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:backgroundTint="#00000000"
-            android:onClick="btncamclc"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_cam_button" />
+            <ImageButton
+                android:id="@+id/imgbtn_analysis"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="2"
+                android:backgroundTint="#00000000"
+                android:onClick="btnanalclc"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_analysis_button" />
+
+            <ImageButton
+                android:id="@+id/imgbtn_cam"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00000000"
+                android:onClick="btncamclc"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_cam_button" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10px"
+                android:fontFamily="arial"
+                android:text="@string/rad_btn1"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10px"
+                android:fontFamily="arial"
+                android:text="@string/rad_btn2"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RadioGroup>
+
     </LinearLayout>
 
 

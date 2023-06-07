@@ -19,6 +19,8 @@ import android.view.Display;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -180,14 +182,28 @@ public class MainActivity extends AppCompatActivity {
         MediaType mediaType = MediaType.parse("multipart/form-data");
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
             .addFormDataPart("image","000001.jpeg.jpeg",
-            RequestBody.create(MediaType.parse("application/octet-stream"),file))
-            .build();
-        Request request = new Request.Builder()
-            .url("http://192.168.0.20:8000/api")
-            .method("POST", body)
-            .addHeader("Content-Type", "multipart/form-data")
-            .addHeader("Accept", "application/json")
-            .build();
+            RequestBody.create(MediaType.parse("application/octet-stream"),file)).build();
+
+        Request request;
+        RadioButton rb1 = findViewById(R.id.radioButton);
+        RadioButton rb2 = findViewById(R.id.radioButton2);
+
+        if (rb1.isChecked()){
+            request = new Request.Builder()
+                    .url("http://192.168.0.40:8000/classif")
+                    .method("POST", body)
+                    .addHeader("Content-Type", "multipart/form-data")
+                    .addHeader("Accept", "application/json")
+                    .build();
+        }
+        else {
+            request = new Request.Builder()
+            .url("http://192.168.0.40:8000/detect")
+                    .method("POST", body)
+                    .addHeader("Content-Type", "multipart/form-data")
+                    .addHeader("Accept", "application/json")
+                    .build();
+        }
 
         client.newCall(request).enqueue(new Callback() {
             @Override
@@ -208,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
                     n = (String) jsonn.getString("name");
                     k = (String) jsonn.getString("KcaL");
                 } catch (JSONException e) {
-                    Toast.makeText(getApplicationContext(), "Анализ не удался. Пожалуйста, повторите попытку.", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Анализ не удался. Пожалуйста, повторите попытку.", Toast.LENGTH_LONG).show();
                 }
 
                 String finalK = k;

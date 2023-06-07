@@ -5,4 +5,7 @@
     <string name="title_profile">Пищевой профиль</string>
     <string name="preName">Что это?</string>
     <string name="preRez">Сколько каллорий на 100г?</string>
+    <string name="rad_btn1">Классификация</string>
+    <string name="rad_btn2">Обнаружение</string>
+
 </resources>
